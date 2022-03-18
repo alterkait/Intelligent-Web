@@ -1,0 +1,33 @@
+Routes/index.js
+controls all the GET pages for the site.
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'My Class' });
+});
+
+/* GET welcome page */
+router.get('/welcome', function (req,res,next){
+  res.render('welcome', {title: 'The Intelligent Web'});
+});
+
+the {title: 'Hello World'} are server variables to be rendered.
+
+
+views/welcome.ejs
+are the rendered pages using 'pseudo-html'. its all HTML except for those server variables.
+
+ <h1><%=title%> is a cool module</h1>
+
+so this would talk to the router.get('/welcome') and see title is 'The Intelligent Web'
+
+
+
+
+	<h1>Welcome to <%= title %></h1>
+    	<p>Please Click <a href="/welcome">getting the other file</a></p>
+
+this is in index.ejs so it would talk to router.get('/') and see title is My Class
+the a href works as any href HTML tag and takes to the routes folder
+
+
